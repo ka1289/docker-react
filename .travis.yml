@@ -9,12 +9,12 @@ script:
   - docker run -e CI=true test npm run test -- --coverage
 
 deploy:
-  - provider: elasticbeanstalk
-  - region: "ap-south-1"
-  - app: "docker-react"
-  - env : "DockerReact-env"
-  - bucket_name: "elasticbeanstalk-ap-south-1-851858764444"
-  - bucket_path: "docker-react"
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-react"
+  env : "DockerReact-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-851858764444"
+  bucket_path: "docker-react"
   on: 
     branch: master
   access_key_id: $aws_access_key
